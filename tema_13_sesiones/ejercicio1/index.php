@@ -1,5 +1,7 @@
 <?php
+    session_id("session_13_01");
     session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -13,13 +15,25 @@
 <body>
 
     <?php
+/**
+ *2. Volveremos al ejercicio de registro de usuarios, donde nos presentaba un 
+ *   formulario para darnos de alta. Debemos controlar todas las restricciones que 
+ *   queramos en cada campo, por ejemplo un identificador de usuario que no exista, 
+ *   que tenga mayúsculas, minúsculas y dígitos. Cuando nos pida algún dato del 
+ *   formulario que hubiésemos incluido erróneo,nos lo vuelve a pedir en rojo , 
+ *   dejando cumplimentados el resto de los campos.
+ *   Cuando empieza la session nos da la bienvenida con nuestro nombre y la posibilidad
+ *   de salirnos de sesion. 
+ */
+
         require("php/generate_content.php");
         require("php/data_check.php");
         if (!isset($_POST['submit'])) {
             output_form();
-        } else {
-            
+        } elseif () {
+                
         }
+        echo         
 
     ?>
     

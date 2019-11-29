@@ -3,30 +3,35 @@
     function output_form() {
         echo <<<EOD
 
-        <div class="wrapper">
+        <div class="form-wrapper">
             <form action="" method="post">
 
-                <h1>Enter a name:</h1>
+                <h1>Sign In</h1>
 
-                <div class="two-col">
-                    <input type="text" name="given_name">
-                    <label for="given_name">
-                        Name
-                    </label>
+                <label for="username">
+                    Enter your username:
+                </label>
+
+                <input type="text" name="username"  placeholder="" required>
+
+                <label for="password">
+                    Enter your password:
+                </label>
+
+                <input type="password" name="password" required>
                 </div>
 
-                <input type="text" name="last_name" required>
-                    <label for="last_name" class="">
-                        Last
-                    </label>
-                </div>
+                <button type="submit" name="submit" class="btn">
+                    Log in
+                </button>
 
-                <button type="submit" name="submit" class="btn" value="Submit">
-    
-            </form>
+                </form>
         </div>
 EOD;
     
     }
 
+    function login_msg() {
+
+    }
 ?>
