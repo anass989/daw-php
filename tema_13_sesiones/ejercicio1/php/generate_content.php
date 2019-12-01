@@ -1,6 +1,6 @@
 <?php
 
-    function output_form() {
+    function output_form($uid, $errors) {
         echo <<<EOD
 
         <div class="form-wrapper">
@@ -12,17 +12,20 @@
                     Enter your username:
                 </label>
 
-                <input type="text" name="username"  placeholder="" required>
+                <input type="text" name="uid"  placeholder="" value=$uid>
+                <span>{$errors['wrong_uid']}</span>
 
                 <label for="password">
                     Enter your password:
                 </label>
 
-                <input type="password" name="password" required>
-                </div>
+                <input type="password" name="password">
+                <span>{$errors['wrong_password']}</span>
+
+                <span> {$errors['error']} </span>
 
                 <button type="submit" name="submit" class="btn">
-                    Log in
+                    Login
                 </button>
 
                 </form>
@@ -31,7 +34,51 @@ EOD;
     
     }
 
-    function login_msg() {
+    function login_msg($uid) {
+        echo <<<EOD
 
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <link rel="stylesheet" href="./../css/style.css">
+            <title>Ejercicio 1</title>
+        </head>
+        <body>
+            <div class="login-wrapper">
+                <h2>Welcome to the login page, $uid</h2>
+                <form method="POST">
+                    <button type="submit" name="logout" class="btn">
+                        Log Out
+                    </button>
+                </form>
+            </div>
+        </body>
+        </html>
+EOD;
+    }
+
+    function logout_msg() {
+        echo <<<EOD
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <link rel="stylesheet" href="./../css/style.css">
+            <title>Ejercicio 1</title>
+        </head>
+        <body>
+            <div class="logout-wrapper">
+             <p>You have successfully logged out</p>
+            </div>
+        </body>
+        </html>
+EOD;
     }
 ?>
+
