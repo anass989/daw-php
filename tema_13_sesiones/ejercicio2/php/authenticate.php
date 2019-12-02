@@ -62,5 +62,9 @@
 
         return $error;
     }
+
+    function get_errors() {
+        
+    }
     
 ?>

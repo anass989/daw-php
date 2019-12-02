@@ -41,7 +41,8 @@ form > * {
 
 .logout-wrapper {
     text-align: center;
-    font-size: 1.4rem;
 }
 
-
+.error {
+    color: red;
+}

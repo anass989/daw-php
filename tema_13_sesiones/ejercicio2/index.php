@@ -1,7 +1,6 @@
 <?php
     session_id("session-13-01");
     session_start();
-
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
-    <title>Ejercicio 1</title>
+    <title>Ejercicio 2</title>
 </head>
 <body>
 
@@ -25,6 +24,7 @@
  *   dejando cumplimentados el resto de los campos.
  *   Cuando empieza la session nos da la bienvenida con nuestro nombre y la posibilidad
  *   de salirnos de sesion. 
+ *   -> Intentar meter otros inputs (radio, checkbox, etc.)
  */
 
         require("php/generate_content.php");
@@ -37,24 +37,24 @@
             "error" => ''
         ];
 
-        
         if (isset($_POST['submit'])) {
             $uid = get_data("uid");
             $password = $_REQUEST['password'];
+            if($uid !== '' && $password !== '') {
+                if(validate_text($uid)) {
+                    $error = authenticate_login($uid, $password);
 
-            if(validate_text($uid)) {
-                $error = authenticate_login($uid, $password);
+                    if($error === 'pass') {
+                        $errors['wrong_password'] = 'Wrong password.';
+                    } elseif ($error === 'uid') {
+                        $errors['wrong_uid'] = 'Username doesn\'t exist.';
+                    } else {
+                        header('Location: php/login.php');
+                    }
 
-                if($error === 'pass') {
-                    $errors['wrong_password'] = 'Wrong password.';
-                } elseif ($error === 'uid') {
-                    $errors['wrong_uid'] = 'Username doesn\'t exist.';
-                } else {
-                    header('Location: php/login.php');
+                } elseif (!validate_text($uid)) {
+                    $errors['wrong_uid'] = 'Invalid username.';
                 }
-
-            } elseif (!validate_text($uid)) {
-                $errors['wrong_uid'] = 'Invalid username.';
             } else {
                 $errors['error'] = 'Please, fill in the required files.';
             }

@@ -1,5 +1,34 @@
 <?php
 
+    function output_form_template() {
+        echo <<<EOD
+
+        <div class="form-wrapper">
+            <form action="" method="post">
+
+                <h1>Sign In</h1>
+
+                <label for="username">
+                    Enter your username:
+                </label>
+
+                <input type="text" name="uid"  placeholder="">
+
+                <label for="password">
+                    Enter your password:
+                </label>
+
+                <input type="password" name="password">
+
+                <button type="submit" name="submit" class="btn">
+                    Login
+                </button>
+
+                </form>
+        </div>
+EOD;
+
+    }
     function output_form($uid, $errors) {
         echo <<<EOD
 
@@ -13,16 +42,16 @@
                 </label>
 
                 <input type="text" name="uid"  placeholder="" value=$uid>
-                <span>{$errors['wrong_uid']}</span>
+                <span class="error">{$errors['wrong_uid']}</span>
 
                 <label for="password">
                     Enter your password:
                 </label>
 
                 <input type="password" name="password">
-                <span>{$errors['wrong_password']}</span>
+                <span class="error">{$errors['wrong_password']}</span>
 
-                <span> {$errors['error']} </span>
+                <span class="error">{$errors['error']}</span>
 
                 <button type="submit" name="submit" class="btn">
                     Login
@@ -34,6 +63,8 @@ EOD;
     
     }
 
+
+
     function login_msg($uid) {
         echo <<<EOD
 
@@ -44,7 +75,7 @@ EOD;
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
             <link rel="stylesheet" href="./../css/style.css">
-            <title>Ejercicio 1</title>
+            <title>Ejercicio 2</title>
         </head>
         <body>
             <div class="login-wrapper">
@@ -70,11 +101,11 @@ EOD;
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
             <link rel="stylesheet" href="./../css/style.css">
-            <title>Ejercicio 1</title>
+            <title>Ejercicio 2</title>
         </head>
         <body>
             <div class="logout-wrapper">
-             <p>You have successfully logged out</p>
+                <p>You have successfully logged out.</p>
             </div>
         </body>
         </html>
