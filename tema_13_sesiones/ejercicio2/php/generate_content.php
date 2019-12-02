@@ -1,70 +1,5 @@
 <?php
 
-    function output_form_template() {
-        echo <<<EOD
-
-        <div class="form-wrapper">
-            <form action="" method="post">
-
-                <h1>Sign In</h1>
-
-                <label for="username">
-                    Enter your username:
-                </label>
-
-                <input type="text" name="uid"  placeholder="">
-
-                <label for="password">
-                    Enter your password:
-                </label>
-
-                <input type="password" name="password">
-
-                <button type="submit" name="submit" class="btn">
-                    Login
-                </button>
-
-                </form>
-        </div>
-EOD;
-
-    }
-    function output_form($uid, $errors) {
-        echo <<<EOD
-
-        <div class="form-wrapper">
-            <form action="" method="post">
-
-                <h1>Sign In</h1>
-
-                <label for="username">
-                    Enter your username:
-                </label>
-
-                <input type="text" name="uid"  placeholder="" value=$uid>
-                <span class="error">{$errors['wrong_uid']}</span>
-
-                <label for="password">
-                    Enter your password:
-                </label>
-
-                <input type="password" name="password">
-                <span class="error">{$errors['wrong_password']}</span>
-
-                <span class="error">{$errors['error']}</span>
-
-                <button type="submit" name="submit" class="btn">
-                    Login
-                </button>
-
-                </form>
-        </div>
-EOD;
-    
-    }
-
-
-
     function login_msg($uid) {
         echo <<<EOD
 
@@ -79,11 +14,35 @@ EOD;
         </head>
         <body>
             <div class="login-wrapper">
-                <h2>Welcome to the login page, $uid</h2>
+                <h2>Welcome to the login page, {$_SESSION['uid']}</h2>
+                <h3>This is your data:</h3>
+
+                <table class="table-data">
+                    <tbody>
+                    <tr>
+                        <th>Your username:</th>
+                        <td>{$_SESSION['uid']}</td>
+                    </tr>
+                    <tr>
+                        <th>Your password:</th>
+                        <td>{$_SESSION['password']}</td>
+                    </tr>
+                    <tr>
+                        <th>Your email:</th>
+                        <td>{$_SESSION['email']}</td>
+                    </tr>
+                    <tr>
+                        <th>Your gender:</th>
+                        <td>{$_SESSION['gender']}</td>
+                    </tr>
+                    <tr>
+                        <th>Your language:</th>
+                        <td>{$_SESSION['language']}</td>
+                    </tr>
+                    </tbody>
+                </table>
                 <form method="POST">
-                    <button type="submit" name="logout" class="btn">
-                        Log Out
-                    </button>
+                    <button type="submit" name="logout" class="btn-logout">Log Out</button>
                 </form>
             </div>
         </body>
@@ -111,5 +70,66 @@ EOD;
         </html>
 EOD;
     }
+
+    function output_form() {
+
+        echo <<<EOD
+
+        <div class="form-wrapper">
+            <form action="index.php" method="post">
+
+                <h1>Sign Up</h1>
+
+                <label for="username">
+                    Enter your username:
+                </label>
+
+                <input type="text" name="uid"  placeholder="" value="">
+
+                <label for="password">
+                    Enter your password:
+                </label>
+
+                <input type="password" name="password">
+
+                <label for="password-repeat">
+                    Repeat Password:
+                </label>
+
+                <input type="password" name="password_repeat">
+
+                <label for="password-repeat">
+                    Email:
+                </label>
+
+                <input type="email" name="email" value="">
+
+                <label for="gender">
+                    Gender:
+
+                    <input type="radio" name="gender"> Male
+                    <input type="radio" name="gender" value=""> Female
+                    <input type="radio" name="gender" value=""> Other
+                </label>
+
+                <label for="language">
+                    Language:
+                </label>
+
+                <select name="language" id="">
+                    <option name="language" value=""></option>
+                    <option name="language" value=""></option>
+                    <option name="language" value=""></option>
+                </select>
+
+                <button type="submit" name="submit" class="btn">
+                    Login
+                </button>
+
+                </form>
+        </div>
+EOD;
+        }
+
 ?>
 

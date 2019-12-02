@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
-    <title>Ejercicio 2</title>
+    <title>Login</title>
 </head>
 <body>
 
@@ -28,26 +28,40 @@
  */
 
         require("php/generate_content.php");
-        require("php/functions.php");
+        require("php/authenticate.php");
 
-        //cambiar - objeto
+        $uid = '';
         $errors = [
             "wrong_uid" => '',
             "wrong_password" => '',
-            "wrong_password_repeat" => '',
-            "wrong_gender" => '',
-            "wrong_email" => '',
-            "wrong_language" => '',
             "error" => ''
         ];
 
-        if (isset($_POST['submit']) && $_POST['submit'] === 'submit') {
-            $errors = get_errors($errors);
-        } elseif (isset($_POST['submit']) && $_POST['submit'] === 'reset') { 
-            $_POST = [];
+        if (isset($_POST['submit'])) {
+            $uid = get_data("uid");
+            $password = $_REQUEST['password'];
+            if($uid !== '' && $password !== '') {
+                if(validate_text($uid)) {
+                    $error = authenticate_login($uid, $password);
+
+                    if($error === 'pass') {
+                        $errors['wrong_password'] = 'Wrong password.';
+                    } elseif ($error === 'uid') {
+                        $errors['wrong_uid'] = 'Username doesn\'t exist.';
+                    } else {
+                        header('Location: php/login.php');
+                    }
+
+                } elseif (!validate_text($uid)) {
+                    $errors['wrong_uid'] = 'Invalid username.';
+                }
+            } else {
+                $errors['error'] = 'Please, fill in the required files.';
+            }
         }
 
-        include('php/form.php');
+        output_form($uid, $errors);  
+
     ?>
     
 </body>

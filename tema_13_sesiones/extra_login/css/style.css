@@ -7,7 +7,7 @@
 }
 
 html {
-    font-size: 62.4%;
+    font-size: 65.9%;
 }
 
 body {
@@ -18,6 +18,7 @@ body {
 .login-wrapper,
 .logout-wrapper {
     width: 50%;
+    height: 50%;
     font-size: 1.4rem;
     position: absolute;
     top: 50%;
@@ -33,9 +34,9 @@ form > * {
 }
 
 .login-wrapper > * {
+    display: block;
     text-align: center;
     margin: 1rem auto;
-    width: 100%;
 }
 
 .logout-wrapper {
@@ -44,28 +45,4 @@ form > * {
 
 .error {
     color: red;
-}
-
-table {
-    width: 50%;
-    border-collapse: collapse;
-    display: flex;
-    flex-direction: column;
-}
-
-tr {
-    display: block;
-    border-bottom: 1px solid black;
-    padding: 2rem;
-}
-
-th, td {
-    font-size: 1.7rem;
-}
-
-button .btn-logout {
-    width: 30%;
-    margin-top: 2rem;
-    padding: 1rem 3rem;
-    text-align: center;
 }
