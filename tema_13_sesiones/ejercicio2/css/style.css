@@ -12,6 +12,7 @@ html {
 
 body {
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
 }
 
 .form-wrapper,
@@ -19,10 +20,6 @@ body {
 .logout-wrapper {
     width: 50%;
     font-size: 1.4rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 form > * {
@@ -31,13 +28,66 @@ form > * {
     display: block;
     margin: 1rem auto;
 }
-
-.login-wrapper > * {
-    text-align: center;
-    margin: 1rem auto;
+form {
     width: 100%;
+    max-width: 500px;
+    font-size: 1.5rem;
+    letter-spacing: 0.05rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
+h1 {
+    letter-spacing: 0.3rem;
+    margin-bottom: 3rem;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    border: 1px solid black;
+    padding: 1.3rem;
+    border-radius: 0.4rem;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+select:focus,
+select:active {
+    border: 2px solid #f1cf2d;
+    outline: none;
+}
+
+input[type="submit"] {
+    width: 15rem;
+    height: 3.9rem;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    border: 1px solid black;
+    border-radius: 100px;
+    text-transform: capitalize;
+    transition: all .3s ease-in-out;
+    margin: 3rem auto;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    transform: translateY(-0.2rem);
+}
+
+select {
+    height: 3rem;
+    border-radius: 0.4rem;
+    background-color: transparent;
+    border: 1px solid black;
+}
 .logout-wrapper {
     text-align: center;
 }
@@ -45,12 +95,36 @@ form > * {
 .error {
     color: red;
 }
+/* PÁGINA DE LOGIN */
+h2 {
+    font-weight: normal;
+    letter-spacing: 0.1rem;
+}
 
-table {
-    width: 50%;
-    border-collapse: collapse;
+h3 {
+    font-weight: normal;
+    letter-spacing: 0.1rem;
+}
+div.login-wrapper > * {
+    text-align: center;
+    margin: 1rem auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+div.btn-wrapper {
+    margin-top: 3rem;
+    width: 80%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+table {
+    border-collapse: collapse;
 }
 
 tr {
@@ -59,13 +133,31 @@ tr {
     padding: 2rem;
 }
 
-th, td {
-    font-size: 1.7rem;
+th {
+    width: 15rem;
+    text-align: left;
+    letter-spacing: 0.1rem;
+}
+td {
+    letter-spacing: 0.05rem;
 }
 
-button .btn-logout {
-    width: 30%;
-    margin-top: 2rem;
-    padding: 1rem 3rem;
-    text-align: center;
+button.btn-logout {
+    margin-top: 4rem;
+    width: 15rem;
+    height: 3.9rem;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    border: 1px solid black;
+    border-radius: 100px;
+    transition: all .3s ease-in-out;
+}
+
+button.btn-logout:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    transform: translateY(-0.2rem);
 }

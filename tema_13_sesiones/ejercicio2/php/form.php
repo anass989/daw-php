@@ -58,8 +58,10 @@
             <span class="error"><?php echo $errors['wrong_language'];?></span>
             <span class="error"><?php echo $errors['error'];?></span>
 
-            <input type="submit" name="submit" value="submit" class="btn">
-            <input type="submit" name="submit" value="reset" class="btn">
+            <div class="btn-wrapper">
+                <input type="submit" name="submit" value="submit" class="btn btn-submit">
+                <input type="submit" name="submit" value="reset" class="btn btn-reset">
+            </div>
         </form>
     </div>
 
