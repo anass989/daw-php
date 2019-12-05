@@ -1,0 +1,32 @@
+- $foo =& $_SESSION['foo'] -> bind $foo && $_SESSION['foo'], cada vez que actualicemos $foo se actualizará $_SESSION['foo'] también.  
+
+
+1) in_array($needle, $haystack, $strict = FALSE)
+    - Comprueba si un valor existe en un array.
+    - Es case sensitive.
+    - Usamos strict si queremos que la comparación sea exacta (valor y tipo).
+
+2) array_rand($array, $num = 1) 
+    - Selecciona uno o más valores aleatorios ($num).
+    - Devuelve las claves de esos valores aleatorios.
+
+3) array_fill($start_index, $num, $value)
+    - $start_index: primer índice del array devuelto. Si es negativo, el primer valor devuelto es este número negativo y los siguientes comenzarán desde cero.
+    - $num: número de elementos a insertar (>= 0).
+    - $value: valor a usar para el llenado.
+
+4) array_replace($array1, $array2)
+    - reemplaza los valores de array1 con valores que tienen las mismas claves en los siguientes arrays
+    - si la clave solo existe en el primer array, se deja como está
+
+5) array_replace_recursive($array1, $array2, ...)
+    - reemplaza los valores de array1 con los mismos valores de los siguientes arrays
+    - si una clave no existe en el primer array, será creada
+    - https://www.php.net/manual/es/function.array-replace-recursive.php
+
+5) array_intersect($array1, $array2)
+    - Devuelve los valores de $array1 que existen en ambos
+    - $array1: array con los valores a comparar
+    - $array2: array con el que se comparan los valores
+
+
