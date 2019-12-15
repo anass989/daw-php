@@ -1,8 +1,6 @@
 *,
 *::after,
 *::before {
-    padding: 0;
-    margin: 0;
     box-sizing: inherit;
 }
 
@@ -12,21 +10,130 @@ html {
 
 body {
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    position: relative;
+    height: 100vh;    
 }
 
-.intro-form-wrapper {
-    height: 100vh;
-}
-
-form {
-    height: 100%;
+.intro-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    padding: 2rem;
+    border: 0.1rem solid black;
+    border-radius: 0.5rem;
 }
 
-button.btn-start {
-    padding: 1rem 3rem;
+h2 {
+    color: #011f3e;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    letter-spacing: 0.2rem;
+    font-weight: bold;
+    padding: 2%;
+}
+
+span {
+    letter-spacing: 0.1rem;
+}
+
+form.form-chapter {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+
+button.chapter {
+    background-color: transparent;
+    border: 0.1rem solid black;
+    padding: 1em 2em;
+    border-radius: 100px;
+    margin: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    transition: all .15s ease-in-out;
+}
+
+button.chapter:hover {
+    outline: none;
+    cursor: pointer;
+    transform: translateY(-0.3rem);
+}
+
+.game-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.content {
+    width: 35%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 4%;
+}
+
+.score-wrapper {
+    font-size: 1.5rem;
     width: 30%;
+    display: grid;
+    text-align: left;
+    grid-template-columns: repeat(1, auto);
+}
+
+.word-wrapper {
+    font-size: 3rem;
+    letter-spacing: 0.3rem;
+    width: 70%;
+    text-align: right;
+}
+
+form.form-letters {
+    width: 40%;
+    margin: 1rem auto;
+}
+
+.form-letters {
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    text-align: center;
+}
+
+.form-letters input[type="submit"] {
+    background-color: transparent;
+    border: 0.1rem solid #011f3e;
+    background-color: #011f3e;
+    color: whitesmoke;
+    height: 4rem;
+    width: 4rem;
+    padding: 0.2rem 0.2rem;
+    margin: 0.2rem auto;
+    border-radius: 0.5rem;
+    transition: all .25s ease-in;
+}
+
+.form-letters input[type="submit"]:hover {
+    cursor: pointer;
+    outline: none;
+    opacity: .9;
+}
+
+.form-letters input[type="submit"]:disabled {
+    outline: none;
+    opacity: .9;
 }
