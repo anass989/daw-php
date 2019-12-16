@@ -76,4 +76,16 @@ EOD;
         }
         echo '</form>';
     }
+
+    function output_loss() {
+        echo <<<EOD
+        <div class="loss-wrapper">
+            <span class="loss">You lost.</span>
+            <form action="" method="get">
+                <button type="submit" name="submit" class="btn-loss">Try again</button>
+                <button type="reset" name="reset" class="btn-loss">Start over</button>
+            </form>
+        </div>
+        EOD;
+    }
 ?>
