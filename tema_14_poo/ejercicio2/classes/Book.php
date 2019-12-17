@@ -34,6 +34,15 @@ class Book {
     public function setIsbn($isbn) {
         $this->isbn = $isbn;
     }
+
+    public function getPrintableTitle():string {
+        $result = '<i>' . $this->title . '</i>';
+        if (!$this->available) {
+            $result = '<i> Not available </i>';
+        }
+        return $result;
+    }
+    
 }
 
 ?>

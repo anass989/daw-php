@@ -28,6 +28,21 @@ class Customer {
     public function getEmail() {
         return $this->email;
     }
+
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+    public function setLastName($last_name){
+        $this->last_name = $last_name;
+    }
+
+    public function setEmail($email) {
+        $this->email = $email;
+    }
 }
 
 ?>

@@ -15,12 +15,12 @@
         <body>
         EOD;
         echo '<div class="game-wrapper">';
-        echo "<h2>$chapter</h2>";
-        echo '<div class="content">';
-        output_score($score, $attempts);
-        output_word($word, $guessed);
-        echo '</div>';
-        output_letters($guessed);
+            echo "<h2>$chapter</h2>";
+            echo '<div class="content">';
+                output_score($score, $attempts);
+                output_word($word, $guessed);
+            echo '</div>';
+            output_letters($guessed);
         echo '</div></body>';
     }
 
@@ -56,7 +56,7 @@
             <span>Score: $score</span>
             <span>Attempts: $attempts</span>
         </div>
-EOD;
+        EOD;
     }
 
     function output_letters($guessed) {

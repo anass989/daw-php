@@ -1,0 +1,17 @@
+
+MÉTODOS MÁGICOS
+---------------
+- No los invocamos nosotros
+1) __constructor
+2) __tostring: devuelve una cadena, se invoca cuando hacemos echo etc
+3) __tocall: se intenta llamar a un método o clase que no existe
+ - se le pasa el nombre del método como una cadena y los argumentos del método
+
+MÉTODOS ESTÁTICOS
+-----------------
+
+NAMESPACES
+----------
+
+
+
