@@ -12,9 +12,10 @@
             <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
             <title>Hangman</title>
         </head>
-        <body>
-        EOD;
-        echo '<div class="game-wrapper">';
+
+EOD;
+
+        echo '<body><div class="game-wrapper">';
             echo "<h2>$chapter</h2>";
             echo '<div class="content">';
                 output_score($score, $attempts);
@@ -47,7 +48,9 @@
                 <button type="submit" name="chapter" class="chapter" value="chapter 12">Chapter 12</button>
             </form>
         </div>
-        EOD;
+
+EOD;
+
     }
 
     function output_score($score, $attempts) {
@@ -56,7 +59,9 @@
             <span>Score: $score</span>
             <span>Attempts: $attempts</span>
         </div>
-        EOD;
+
+EOD;
+
     }
 
     function output_letters($guessed) {
@@ -66,12 +71,14 @@
             if (in_array($letter, $guessed)) {
                 echo <<<EOD
                     <input type="submit" name="submit" class="input-letter" value="$letter" disabled />
-                EOD;
+
+EOD;
 
             } else {
                 echo <<<EOD
                     <input type="submit" name="submit" class="input-letter" value="$letter" />
-                EOD;    
+
+EOD;    
             }
         }
         echo '</form>';
@@ -86,6 +93,9 @@
                 <button type="reset" name="reset" class="btn-loss">Start over</button>
             </form>
         </div>
-        EOD;
+
+EOD;
+
     }
+
 ?>

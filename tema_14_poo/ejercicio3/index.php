@@ -9,7 +9,11 @@
 </head>
 <body>
     <?php
+        require('php/generate_content.php');
         // pedimos color, número de lados
+        if (!isset($_REQUEST['submit'])) {
+            output_form();
+        }
     ?>    
 </body>
 </html>
