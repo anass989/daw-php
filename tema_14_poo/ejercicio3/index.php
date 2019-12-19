@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    include 'includes/autoloader.inc.php';
+    include 'includes/generate_content.inc.php';
+    include 'includes/functions.inc.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,10 +16,18 @@
 </head>
 <body>
     <?php
-        require('php/generate_content.php');
         // pedimos color, número de lados
         if (!isset($_REQUEST['submit'])) {
             output_form();
+        } else {
+            $_SESSION['color_hex'] = $_REQUEST['color_hex'];
+            $_SESSION['shape'] = $_REQUEST['shape'];
+
+            $color_hex = $_SESSION['color_hex'];
+            $color_rgb = get_rgb($color_hex);
+            $_SESSION['color_rgb'] = $color_rgb;
+
+            var_dump($_SESSION);
         }
     ?>    
 </body>
